@@ -1,0 +1,42 @@
+<%= form_for(@submit) do |f| %>
+  <% if @submit.errors.any? %>
+      <script>
+
+        $("span").text("Validated...").show();
+    
+      </script>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, :value => "Ime", :name => 'name'  %>
+  </div>
+  <div class="field">
+    <%= f.text_field :surname, :value => "Prezime", :name => 'surname' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email, :value => "E-mail Adresa" , :name => 'email'%>
+  </div>
+  <div class="actions">
+    <%= f.submit ""  %>
+    <error display:"inline", align = 'right', padding-left = '30px'><span></span></error>
+</div>
+
+<!--<script>
+
+    $("form").submit(function() {
+      if ($("name:first").text() == "correct") {
+        $("span").text("Validated...").show();
+        return true;
+      }
+      $("span").text("UnValidated").show().fadeOut(2000);
+      return false;
+    });
+</script> /-->
+
+
+<% end %>
+
+
+
+
+

@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, blockquote {
+	margin: 0; padding: 0; border: 0;
+}
+
+body {
+	font-family: Helvetica, Arial, Sans-Serif; line-height: 24px;
+	background: #FFFFFF;
+}
+
+#container {
+	width: 1000px;
+	height: 1800px;
+	margin: auto auto;
+	background:  url(../background.png) repeat ;
+	background-color: #1F1F1E;
+	
+}
+
+
+
+#header h1 {
+		
+}
+
+#categories{
+	display: list-item;
+	
+	display: inline;
+	padding-left: 75px;
+	}
+#categories li
+{
+display: inline;
+}
+
+#categories li a{
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: inherit;
+	color: #000;
+	text-shadow: 0 2px 0px #fff;
+	text-decoration: none;
+	display: inline;
+	
+			}
+
+
+
+#content  {
+		width: 840px; padding: 55px 0 0 0;
+		height: auto;
+	    padding-left: 75px;
+		background:  url(../background.png) repeat ;
+		
+	}
+	
+     #content li {
+	margin: 0 0 0 0;
+	text-align: center;
+	height:35px;
+	left: auto;	
+	padding-top:10px;
+	}
+		
+		#content li a{
+	
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: inherit;
+   padding-right:770px;
+   padding-top:10px;
+	
+			}
+		
+    #content#prati_nas li
+	{
+		padding-left:10 px;
+		}   
+
+	
+		#content  h2 {
+	margin: 0 0 16px 0;
+	color: #FC0;
+		}
+
+		#content  p {
+	margin: 0 0 25px 0;
+	color: #FFF;
+	font-size: 15px;
+	text-align: left;
+		}
+			#content  error {
+	margin: 0 0 25px 0;
+	color: red;
+	font-size: 20px;
+	text-align: left;
+		}
+		
+	#content form
+	{
+		width:600px;
+	}
+		
+		#content form input[type="text"] 
+		{
+	
+	width: 400px;
+	height: 29px;
+		background:  url(../txtbox_bgd.png);
+	background-repeat: no-repeat;
+	padding-left: 10px;
+	color: #999;
+	font-weight: bold;
+
+  border: 5px solid rgba(0,0,0,0);
+ 	/* [disabled]bottom: 10px; */
+		}
+		
+		#content form  input[type="submit"]
+		{
+	
+	width: 100px;
+	height: 35px;
+		background:  url(../prijavi_se.png);
+	background-repeat: no-repeat;
+	
+	color: #999;
+	font-weight: bold;
+
+  border: 5px solid rgba(0,0,0,0);
+ 	/* [disabled]bottom: 10px; */
+		}
+
