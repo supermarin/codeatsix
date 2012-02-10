@@ -9,6 +9,45 @@ body {
 	background: #FFFFFF;
 }
 
+#tt {
+ position:absolute;
+ display:block;
+  }
+ #tttop {
+ display:block;
+ height:5px;
+ margin-left:5px;
+ overflow:hidden;
+ }
+#ttbot {
+display:block;
+height:5px;
+margin-left:5px;
+overflow:hidden;
+}
+ #ttcont {
+ display:block;
+ padding:2px 12px 3px 7px;
+ margin-left:5px;
+ background:#666;
+ color:#fff;
+ border: 2px solid #666 ;
+-moz-border-radius-topleft: 8px;
+-moz-border-radius-topright: 8px;
+-moz-border-radius-bottomright: 8px;
+-moz-border-radius-bottomleft: 0px;
+-webkit-border-radius: 8px 8px 8px 0px;
+border-radius: 8px 8px 8px 0px;
+ }
+
+.hotspot {
+color:#900; 
+padding-bottom:1px; 
+border-bottom:1px dotted #900; 
+cursor:pointer
+}
+
+
 #container {
 	width: 1000px;
 	height: 1800px;
@@ -71,6 +110,9 @@ display: inline;
 	text-transform: inherit;
    padding-right:770px;
    padding-top:10px;
+  text-align: left;
+  left: auto;
+  display:inlin;
 	
 			}
 		
@@ -85,30 +127,35 @@ display: inline;
 	color: #FC0;
 		}
 
-		#content  p {
+	#content  p {
 	margin: 0 0 25px 0;
 	color: #FFF;
 	font-size: 15px;
 	text-align: left;
 		}
-			#content  error {
+  
+  #content  error {
 	margin: 0 0 25px 0;
 	color: red;
 	font-size: 20px;
 	text-align: left;
+	height: 30px;
 		}
-		
+	
+	
+	
+	
 	#content form
 	{
-		width:600px;
+		width:420px;
 	}
 		
-		#content form input[type="text"] 
+	#content form input[type="text"] 
 		{
 	
 	width: 400px;
 	height: 29px;
-		background:  url(../txtbox_bgd.png);
+	background:  url(../txtbox_bgd.png);
 	background-repeat: no-repeat;
 	padding-left: 10px;
 	color: #999;

@@ -1,0 +1,36 @@
+
+
+
+
+  <div id= "prijava_lightweight", style="position: relative; height : 300px ;width: 1000px; margin: auto;">
+  <form>
+  <div id = "osoba",  style="position: absolute;left:0px;top:0px; width: 350px;">
+     
+    <%= text_field :first_name, :value => "Ime", :name => 'first_name' %>
+    <%= text_field :last_name, :value => "Prezime", :name => 'last_name' %>
+    <%= text_field :e_mail, :value => "E-mail Adresa" , :name => 'e_mail'%>
+  </div>
+
+  <div id = "predavac", style="position: absolute;left:430px;top:0px;">
+   <div class="actions", style="position: inline;"z>
+   <p><label for="Predavac">Prijava kao predavac: </label> </p>
+      <input type="checkbox" name="predavac"  value="value1" onclick="showMe('skrivanje', this)" />
+     
+    </div>
+  
+    <div id="skrivanje">
+       <%= text_field :title, :value => "Naslov" , :name => 'title'%>
+       <%= text_field :body, :value => "Ukratko" , :name => 'body'%>
+    </div>
+ 
+    <div class="actions" >
+       <%#= submit ""  %> 
+      <error display:"inline", align = 'right', padding-left = '30px'><span></span></error>
+    </div>
+    <li>
+			<a href="image.html" class="lbAction" rel="insert"><button>Submit</button></a> 
+			<a href="#" class="lbAction" rel="deactivate"><button>Cancel</button></a>
+		</li>
+</form>
+</div>
+

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person_id: MyString
+  : 1
+  event_id: MyString
+  : 1
+
+two:
+  person_id: MyString
+  : 1
+  event_id: MyString
+  : 1

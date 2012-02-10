@@ -1,0 +1,16 @@
+<h1>Add new event</h1>
+<%= form_tag :action => 'create' %>
+
+<p><label for="id">ID</label>:
+<%= text_field 'event', 'event_id' %></p>
+<p><label for="title">Title</label>:
+<%= text_field 'event', 'title' %></p>
+<p><label for="body">Description</label></br>:
+<%= text_area 'event', 'body', 'cols' => 50, 'rows' => 20%>
+<p><label for="created_at">Datum stvaranja</label>:
+<%= datetime_select 'event', 'created_at' %> 
+<p><label for="scheduled_at">Datum odrzavanja</label>:
+<%= datetime_select 'event', 'scheduled_at' %> 
+<%= submit_tag "Create" %>
+<%= %>
+<%= link_to 'Back', {:action => 'list'} %>

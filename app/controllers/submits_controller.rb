@@ -16,7 +16,7 @@ class SubmitsController < ApplicationController
   def show
     @submit = Submit.find(params[:id])
 
-    respond_to do |format|
+      respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @submit }
     end

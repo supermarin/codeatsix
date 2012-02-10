@@ -1,0 +1,16 @@
+class CreateTalks < ActiveRecord::Migration
+  def change
+    create_table :talks do |t|
+      t.string :person_id
+      t.integer :
+      t.string :event_id
+      t.integer :
+      t.string :title
+      t.string :
+      t.string :body
+      t.text :
+
+
+    end
+  end
+end

@@ -1,0 +1,10 @@
+class CreateSubmissions < ActiveRecord::Migration
+  def change
+    create_table :submissions do |t|
+      t.string :person_id t.integer :
+      t.string :event_id t.integer :
+
+     
+    end
+  end
+end

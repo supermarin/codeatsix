@@ -5,7 +5,7 @@ class CreateSubmits < ActiveRecord::Migration
       t.string :surname
       t.string :email
 
-      t.timestamps
+    
     end
   end
 end

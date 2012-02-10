@@ -10,7 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131122132) do
+ActiveRecord::Schema.define(:version => 20120207174508) do
+
+  create_table "events", :force => true do |t|
+    t.integer  "event_id"
+    t.string   "title"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "scheduled_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.integer "person_id"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "e_mail"
+  end
+
+  create_table "submissions", :force => true do |t|
+    t.integer "person_id"
+    t.integer "event_id"
+  end
 
   create_table "submits", :force => true do |t|
     t.string   "name"
@@ -18,6 +38,13 @@ ActiveRecord::Schema.define(:version => 20120131122132) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "talks", :force => true do |t|
+    t.integer "person_id"
+    t.integer "event_id"
+    t.string  "title"
+    t.text    "body"
   end
 
 end

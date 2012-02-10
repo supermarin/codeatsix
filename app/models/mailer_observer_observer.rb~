@@ -1,0 +1,2 @@
+class MailerObserverObserver < ActiveRecord::Observer
+end
