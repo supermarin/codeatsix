@@ -9,48 +9,12 @@ body {
 	background: #FFFFFF;
 }
 
-#tt {
- position:absolute;
- display:block;
-  }
- #tttop {
- display:block;
- height:5px;
- margin-left:5px;
- overflow:hidden;
- }
-#ttbot {
-display:block;
-height:5px;
-margin-left:5px;
-overflow:hidden;
-}
- #ttcont {
- display:block;
- padding:2px 12px 3px 7px;
- margin-left:5px;
- background:#666;
- color:#fff;
- border: 2px solid #666 ;
--moz-border-radius-topleft: 8px;
--moz-border-radius-topright: 8px;
--moz-border-radius-bottomright: 8px;
--moz-border-radius-bottomleft: 0px;
--webkit-border-radius: 8px 8px 8px 0px;
-border-radius: 8px 8px 8px 0px;
- }
 
-.hotspot {
-color:#900; 
-padding-bottom:1px; 
-border-bottom:1px dotted #900; 
-cursor:pointer
-}
 
 
 #container {
 	width: 1000px;
-	height: 1800px;
+	height: 1350px;
 	margin: auto auto;
 	background:  url(../background.png) repeat ;
 	background-color: #1F1F1E;
