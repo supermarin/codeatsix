@@ -4,7 +4,6 @@
 
   <div id= "prijava_lightweight", style="position: relative; height : 300px ;width: 1000px; margin: auto;">
   <form>
-  	<h2>Example Form</h2>
   <div id = "osoba",  style="position: absolute;left:0px;top:0px; width: 350px;">
      
     <%= text_field :first_name, :value => "Ime", :name => 'first_name' %>
