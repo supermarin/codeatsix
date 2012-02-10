@@ -60,7 +60,7 @@ The new Meat Loaf tracks on Hell In A Handbasket include "All of Me," "The Givin
 <ul>
 <% @event.each do |event| %>
 <li><p><%= link_to event.title, {:action => 'show', :id => event.id} -%></p>
-	<li><a href="home#prijava" class="lbOn">Prijavi se</a></li>
+	<li><a href="home/prijava" class="lbOn">Prijavi se</a></li>
 </li>
 </ul>
 <% end %>
