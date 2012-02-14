@@ -65,18 +65,35 @@ display: inline;
 	height:35px;
 	left: auto;	
 	padding-top:10px;
+	
 	}
+		
+		#content ul a{
+		padding-right:40px;
+		font-size: 25px;
+		color: #FC0;
+		text-decoration: none;
+		}
+		
+			#content ul a:hover{
+		padding-right:40px;
+		font-size: 25px;
+		color: #000;
+		text-decoration: none;
+		}
 		
 		#content li a{
 	
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: inherit;
+	color: #FC0;
    padding-right:770px;
    padding-top:10px;
+   
   text-align: left;
   left: auto;
-  display:inlin;
+  display:inline;
 	
 			}
 		
