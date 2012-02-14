@@ -1,5 +1,5 @@
  
- <h2> Prijava za pradavanje </h2></br>
+ <h1> Prijava za predavanje </h1></br>
  
  <div id= "prijava_lightweight">
  
@@ -9,12 +9,14 @@
       <input type="checkbox" name="jeli_predavac"  value="value1" onclick="showMe('predavac', this);showMeNot('submission', this)" /></p>
   </div>
   
+  
+  
   <form>
   <div id = "submission">
     <input type="text" size="30" name="first_name" value = "Ime" id="first_name">
     <input type="text" size="30" name="last_name" value = "Prezime" id="last_name">
     <input type="text" size="30" name="e_mail" value = "E-mail Adresa" id="e_mail">
-    
+  
     <li>
 			<a href="#" class="lbAction" rel="insert"><button>Submit</button></a> 
 			<a href="#" class="lbAction" rel="deactivate"><button>Cancel</button></a>

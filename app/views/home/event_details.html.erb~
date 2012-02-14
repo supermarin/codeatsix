@@ -1,9 +1,9 @@
 <h2><%= @event.title %></h2>
 
-<strong>Title :</strong> <%= @event.title %><br />
-<strong>Description :</strong> <%= @event.body %><br />
-<strong>Datum unosa :</strong> <%= @event.created_at %><br />
-<strong>Datum odrzavanja:</strong> <%= @event.scheduled_at %><br />
+<p>Title : <%= @event.title %><br /></p>
+<p>Description : <%= @event.body %><br /></p>
+<p>Datum unosa : <%= @event.created_at %><br /></p>
+<p>Datum odrzavanja: <%= @event.scheduled_at %><br /></p>
 
-<hr />
-<%= link_to 'Back', {:action => 'eventi'} %>
+<li><a href="#" class="lbAction" rel="deactivate"><button>Cancel</button></a></li>
+

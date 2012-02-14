@@ -61,6 +61,23 @@ Modified : February 1, 2006
 	height:100%;
 }
 
+h1 {
+	margin: 10px -10px 5px 10px;
+	color: #FC0;
+	text-align: left;
+		}
+		
+#lightbox a {
+	margin: 10px -10px 5px 10px;
+	color: #FC0;
+	text-align: left;
+		}
+		
+		
+button {
+	margin: 15px 0 0 20px;
+		}
+
 p {
 	margin: 8px 0 8px 30px;
 	color: #FFF;

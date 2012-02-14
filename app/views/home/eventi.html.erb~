@@ -1,4 +1,4 @@
-<h2> Predavanja </h2></br>
+<h1> Predavanja </h1></br>
 
 <% if @event.blank? %>
 <p>There are not any event upcoming.</p>
@@ -10,11 +10,9 @@
 <li><%= link_to c.title, {:action => 'event_details', :id => c.id}, :class =>'lbAction', :rel=>'insert' -%>
 
 
-</li><li><a href="home/prijava" class="lbAction" rel = "insert" >prijava</a></li>
-<link><a href="home/event/16" class="lbAction" rel = "insert" >nesto probe radi</a></link></ul>
-
-<a href="home/prijava" class="lbOn"><button>Submit</button></a> 
-
 <% end %>
+
+ <li><a href="#" class="lbAction" rel="deactivate"><button>Cancel</button></a></li>
+
 <% end %>
 
