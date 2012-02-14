@@ -1,4 +1,4 @@
-<%= form_for(@submit) do |f| %>
+<%= form_for(@person) do |f| %>
   
 
   <div class="field">
@@ -11,13 +11,15 @@
   <div class="field">
      <%= f.text_field :email, :value => "E-mail Adresa" , :name => 'email'%>
   </div>
-   <div class="actions", :display = "block">
+   <div class="actions" >
    <p><label for="Predavac">Prijava kao predavac: </label>
-      <input type="checkbox" name="predavac"  value="value1" onclick="showMe('skrivanje', this)" />
+      <input type="checkbox" id="predavac" name="predavac"  checked = "true" value="checked" onclick="showMe('skrivanje', this)"   />
    </p>
   </div>
-  
-  <div id="skrivanje">
+
+
+
+  <div id="skrivanje"  onload="showMe('skrivanje', predavac)">
      <%= f.text_field :title, :value => "Naslov" , :name => 'title'%>
      <%= f.text_field :body, :value => "Ukratko" , :name => 'body'%>
   </div>
@@ -28,12 +30,7 @@
 </div>
 
 
-<script type="text/javascript">
-function showMe (it, box) {
-var vis = (box.checked) ? "block" : "none";
-document.getElementById(it).style.display = vis;
-}
-</script>
+
 
 
 

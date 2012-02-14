@@ -1,14 +1,10 @@
 class CreatePeople < ActiveRecord::Migration
   def change
     create_table :people do |t|
-      t.string :person_id
-      t.integer :
+      t.integer :person_id
       t.string :first_name
-      t.string :
       t.string :last_name
-      t.string :
       t.string :e_mail
-      t.string :
 
 
     end

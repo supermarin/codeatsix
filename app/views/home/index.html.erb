@@ -53,10 +53,14 @@ The new Meat Loaf tracks on Hell In A Handbasket include "All of Me," "The Givin
 <p>There are not any event upcoming.</p>
 <% else %>
 <p>These are the current events in our system</p>
-<ul style = "height : 130px;display:block;">
+<ul style = "height : 130px;width:350px;">
 <% @event.each do |event| %>
 <%= link_to event.title, {:action => 'show', :id => event.id} -%></li>
-<li width='100px'><a href="home/prijava" class="lbOn" style = "display:inline; background : url(../prijavi_se.png)  no-repeat; " ></a></li>
+<li width='350px'>
+
+<a href="home/prijava" class="lbOn" style = "display:inline; background : url(../prijavi_se.png)  no-repeat; " ></a>
+
+<a href="home/eventi" class="lbOn" >vise o eventima...</a></li>
 	
 
 </ul>
@@ -70,7 +74,20 @@ The new Meat Loaf tracks on Hell In A Handbasket include "All of Me," "The Givin
 
 </div>
     
-   
+<script type="text/javascript">
+function showMe (it, box) {
+var vis = (box.checked) ? "block" : "none";
+document.getElementById(it).style.display = vis;
+}
+</script> 
+
+<script type="text/javascript">
+function showMeNot (it, box) {
+var vis = (box.checked) ? "none" : "block";
+document.getElementById(it).style.display = vis;
+}
+</script> 
+ 
 	
 <div id="prati_nas"></div>
         <ul id="prati_nas">

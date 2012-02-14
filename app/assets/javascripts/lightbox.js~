@@ -150,7 +150,7 @@ lightbox.prototype = {
 	// Example of creating your own functionality once lightbox is initiated
 	insert: function(e){
 	   link = Event.element(e).parentNode;
-	   Element.remove($('lbContent'));
+	   Element.remove($('lbContent'))
 	 
 	   var myAjax = new Ajax.Request(
 			  Event.element(e).href,
