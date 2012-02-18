@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,17 +14,17 @@
 ActiveRecord::Schema.define(:version => 20120207174508) do
 
   create_table "events", :force => true do |t|
-     t.string   "title"
-    t.text    "body"
-    t.text    "report"
-    t.datetime "created_at"
+    t.string   "title"
+    t.text     "body"
+    t.text     "report"
+    t.datetime "created_at",   :default => '2012-02-18 14:35:18'
     t.datetime "scheduled_at"
   end
 
   create_table "people", :force => true do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "e_mail"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "e_mail"
   end
 
   create_table "submissions", :force => true do |t|
@@ -32,11 +33,9 @@ ActiveRecord::Schema.define(:version => 20120207174508) do
   end
 
   create_table "submits", :force => true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string "name"
+    t.string "surname"
+    t.string "email"
   end
 
   create_table "talks", :force => true do |t|
