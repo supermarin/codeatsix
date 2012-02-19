@@ -1,4 +1,4 @@
-** TODO **
+## TODO
 
 * validacija dal ta osoba vec postoji => ako postoji napraviti submission sa postojecom osobom umjesto da se stvara nova
 * neka seksi client side validacija
