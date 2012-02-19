@@ -1,10 +1,8 @@
 class CreateSubmissions < ActiveRecord::Migration
   def change
     create_table :submissions do |t|
-      t.integer :person_id  
-      t.integer :event_id 
-
-     
+      t.references :person  
+      t.references :event 
     end
   end
 end

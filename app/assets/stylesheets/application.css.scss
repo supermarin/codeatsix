@@ -1,0 +1,160 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require html5-boilerplate
+ *= require_self
+*/
+
+$yellow-button: #cdc50c;
+$font-gray: #ebebeb;
+$form-font-gray: #848484;
+$background-gray: #eeeeee;
+$inner-width: 840px;
+
+@mixin yellow-button($height, $padding-top) {
+  background-color: $yellow-button;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  height: $height;
+  padding-top: $padding-top;
+  color: #222120;
+  text-shadow: white 1px 1px;
+}
+
+input,
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  background: $background-gray;
+  color: $font-gray;
+
+  strong, em, b, i {
+    font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  }
+
+
+  p {
+    font-size: 85%;
+    line-height: 175%;
+    text-align: left;
+  }
+
+  h2 {
+    color: #ffff00;
+  }
+
+  hr {
+    background-color: #4a4a49;
+  }
+
+  .clearboth {
+    clear: both;
+  }
+  
+  .link {
+    cursor: pointer;
+  }
+
+  #container {
+    width: 1000px;
+    margin: auto;
+    padding-bottom: 50px;
+    background: url(background.png) repeat;
+    background-color: #1F1F1E;
+
+    #navigation {
+      width: $inner-width;
+      height: 35px;
+      margin: auto;
+
+      .buttons {
+
+        .small-button {
+          @include yellow-button(25px, 0px);
+          float: left;
+          margin-right: 5px;
+        }
+
+        .submissions {
+          @extend .small-button;
+          width: 75px;
+        }
+
+        .about {
+          @extend .small-button;
+          width: 100px;
+        }
+
+        .location {
+          @extend .small-button;
+          width: 180px;
+        }
+      }
+
+      #next-meetup {
+        float: left;
+        width: 420px;
+        height: 25px;
+        background-color: #30302f;
+        border-radius: 5px;
+        font-style: bold;
+        text-align:center;
+      }
+    }
+
+    #follow-button {
+      @include yellow-button(40px, 10px);
+      font-size: 20px;
+      width: 850px;
+      border-radius: 5px;
+    }
+
+
+    #content  {
+      width: 840px;
+      height: auto;
+      margin: auto;
+
+      #submissions {
+        .text_field {
+          margin: 10px 0;
+          input {
+            font-size: 80%;
+            color: $form-font-gray;
+            border: 0px;
+            background-color: #1a1a19;
+            height: 30px;
+            padding: 2px 10px;
+          }
+        }
+
+        #apply {
+          @include yellow-button(20px, 0px);
+          font-size: 80%;
+          width: 100px;
+        }
+      }
+
+      #location {
+        height: 280px;
+        .text {
+          float: left;
+          width: 370px;
+          padding-right: 50px;
+        }
+        .pic {
+          float: left;
+          margin-top: 35px;
+        }
+      }
+    }
+  }
+}
+

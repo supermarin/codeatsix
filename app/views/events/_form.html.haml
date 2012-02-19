@@ -1,0 +1,22 @@
+.title
+  = f.label :title
+  = f.text_field :title
+
+.slug
+  = f.label :slug
+  = f.text_field :slug
+
+.announcement
+  = f.label :announcement
+  = f.text_area :announcement
+
+.report
+  = f.label :report
+  = f.text_area :report
+
+.scheduled_at
+  = datetime_select :event, :scheduled_at
+
+%p.active
+  Event is active?: 
+  = f.check_box :is_active

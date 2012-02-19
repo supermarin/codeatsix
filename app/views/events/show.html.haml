@@ -1,0 +1,8 @@
+<h1><%= @event.title %></h1>
+<strong>Title :</strong> <%= @event.title %><br />
+<strong>Description :</strong> <%= @event.announcement %><br />
+<strong>Datum odrzavanja:</strong> <%= @event.scheduled_at %><br />
+<strong>Aktivan ivent:</strong><%= @event.is_active %><br/>
+
+<hr />
+<%= link_to 'Back', events_path %>

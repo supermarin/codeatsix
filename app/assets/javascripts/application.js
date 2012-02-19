@@ -12,6 +12,30 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
-//= require prototype
-//= require lightbox 
+//
+//
+
+$(document).ready(function() {
+  // DIVs as links
+  $('.buttons .link').click(function() {
+    window.location = $(this).attr("url");
+  });
+
+
+  $('#apply.link').click(function() {
+    var params = {
+      event_id: $('#submissions #event_id:hidden').val(),
+      person: {
+        first_name: $('#first_name input').val(),
+        last_name: $('#last_name input').val(),
+        email: $('#email input').val()
+      }
+    }
+    $.post('/apply', params, function(response) {
+      alert("tenks na prijavi")
+    });
+
+  });
+});

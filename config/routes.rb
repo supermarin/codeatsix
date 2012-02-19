@@ -1,6 +1,8 @@
 Codeatsix::Application.routes.draw do
   resources :events
-  resources :people
+
+  post '/apply' => "home#apply"
+  match '/events/:slug' => "events#show"
+  
   root :to => "home#index"
-  match ':controller(/:action(/:id))(.:format)'
 end

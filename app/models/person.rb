@@ -1,6 +1,7 @@
 class Person < ActiveRecord::Base
-  belongs_to :submission
-  belongs_to :talk
+  has_many :submissions
+  has_many :events, :through => :submissions
+  
 
   #validates :person_id,  :presence => true
   validates :first_name,
@@ -13,7 +14,7 @@ class Person < ActiveRecord::Base
             :format => { :with => /\A[a-zA-Z]+\z/, :message => "Dozvoljena su samo slova" },
             :length => { :in => 2..15 }
 
-  validates :e_mail,
+  validates :email,
             :presence => true
  
   #dodat verifikaciju emaila bolju

@@ -1,0 +1,46 @@
+#container
+  #banner= link_to image_tag('banner.png'), '/'
+
+  #navigation
+    .buttons
+      .submissions.link{:url => '#submissions'} Prijave
+      .about.link{:url => '#about'} Tko smo
+      .location.link{:url => '#location'} Gdje se nalazimo
+    #next-meetup= "Sljedeći meetup: #{ "25.3.2012" } u #{ "18h" } "
+
+  .clearboth
+
+  #content
+    %hr
+    #submissions
+      -if @event
+        = form_tag apply_path do |f|
+          = hidden_field_tag :event_id, @event.id
+          #first_name.text_field
+            = text_field :person, :first_name, :value => "Ime"
+          #last_name.text_field
+            = text_field :person, :last_name, :value => "Prezime"
+          #email.text_field
+            = text_field :person, :email, :value => "Email"
+          #apply.link Prijavi se!
+      -else
+        %p Trenutno nema dogadjaja na koje se mozete prijaviti.
+    %hr
+
+    #about
+      %h2 Tko smo
+      %p Performing with Meat Loaf on Hell In A Handbasket is The Neverland Express, his long-time backing ensemble, featuring John Miceli (drums, percussion), Patti Russo (lead and backing vocals), Paul Crook (electric and acoustic guitars), Randy Flowers (electric and acoustic guitars, vocals), David Luther (saxophone, vocals), Justin Avery (piano, organ, keyboard, vocals), and Danny Miranda (electric and upright bass). The new Meat Loaf tracks on Hell In A Handbasket include "All of Me," "The Giving Tree," "Live or Die," "Blue Sky/Mad Mad World/The Good God is a Woman and She Don't Like Ugly" (special appearance by Chuck D), "California Dreamin'" (duet with Patti Russo), "Party of One," "Another Day," "40 Days," "Our Love and Our Souls" (duet with Patti Russo), "Stand in the Storm" (special guest appearances from Trace Adkins, Lil Jon and Mark McGrath), "Blue Sky," and "Fall From Grace."
+    %hr
+
+    #location
+      .text
+        %h2 Gdje se nalazimo
+        %p Performing with Meat Loaf on Hell In A Handbasket is The Neverland Express. Performing with Meat Loaf on Hell In A Handbasket is The Neverland Express.
+      .pic
+        =link_to image_tag('gmaps.png'), 'map.google.com/dskfjsdk'
+    %hr
+
+    #follow-button.link{:url => 'https://twitter.com/#!/codeatsix'}
+      :plain 
+        Prati <strong>@codeatsix</strong> na Twitteru
+

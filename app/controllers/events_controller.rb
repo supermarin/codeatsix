@@ -5,51 +5,42 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    if params[:slug]
+      @event = Event.find_by_slug(params[:slug])
+    else 
+      @event = Event.find(params[:id])
+    end
   end
 
   def new
     @event = Event.new
-    #@submission = Submission.find(:all)
-    #@talk = Talk.find(:all)
   end
 
   def create
     @event = Event.new(params[:event])
-
     if @event.save
-      redirect_to :action => 'list' #ovdje preusmjeravamo akciju
+      redirect_to events_path
     else
-      #@submission = Submission.find(:all)
-      #@talk = Talk.find(:all)
-      render :action => 'new'
+      render new_event_path
     end
   end
 
   def edit
     @event = Event.find(params[:id])
-    @submission = Submission.find(:all)
-    @talk = Talk.find(:all)
   end
 
   def update
     @event = Event.find(params[:id])
     if @event.update_attributes(params[:event])
-      redirect_to :action => 'show', :id => @event
+      redirect_to events_path
     else
-      @submission = Submission.find(:all)
-      @talk = Talk.find(:all)
-      render :action => 'edit'
+      render edit_event_path(@event)
     end
   end
 
-  def delete
+  def destroy
     Event.find(params[:id]).destroy
-    redirect_to :action => 'list'
+    redirect_to events_path
   end
-
-  def show_subjects
-
-  end   
 
 end
