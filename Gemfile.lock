@@ -80,6 +80,7 @@ GEM
       activesupport (= 3.2.1)
       bundler (~> 1.0)
       railties (= 3.2.1)
+    rails-boilerplate (0.1.6)
     railties (3.2.1)
       actionpack (= 3.2.1)
       activesupport (= 3.2.1)
@@ -127,6 +128,7 @@ DEPENDENCIES
   mysql2
   pg
   rails (= 3.2.1)
+  rails-boilerplate
   sass-rails (~> 3.2.3)
   sqlite3
   thin

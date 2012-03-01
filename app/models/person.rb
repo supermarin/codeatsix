@@ -6,17 +6,16 @@ class Person < ActiveRecord::Base
   #validates :person_id,  :presence => true
   validates :first_name,
             :presence => true,
-            :format => { :with => /\A[a-zA-Z]+\z/, :message => "Dozvoljena su samo slova" },
+            :format => { :with => /\A[a-zA-Z]+\z/, :message => "must be letters only" },
             :length => { :in => 2..15 }
 
   validates :last_name,
             :presence => true,
-            :format => { :with => /\A[a-zA-Z]+\z/, :message => "Dozvoljena su samo slova" },
+            :format => { :with => /\A[a-zA-Z]+\z/, :message => "must be letters only" },
             :length => { :in => 2..15 }
 
   validates :email,
-            :presence => true
+            :presence => true,
+            :uniqueness => true
  
-  #dodat verifikaciju emaila bolju
-  # to cemo s dodavanjem novog validatora tj. nove klase za validaciju emaila
 end

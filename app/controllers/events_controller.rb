@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  layout 'admin'
 
   def index
     @event = Event.find(:all)
@@ -10,6 +11,7 @@ class EventsController < ApplicationController
     else 
       @event = Event.find(params[:id])
     end
+    render 'show', :layout => 'application'
   end
 
   def new

@@ -3,8 +3,12 @@
 - else
   %p Events in the system:
   %ul
-    = @event.each do |e|
-      :plain
-        <li><%= link_to e.title, event_path(e) -%> | <%= link_to '[e]', edit_event_path(e) %> | <%= link_to '[x]', event_path(e), :method => :delete, :confirm => "Ya sure?" %></li>
+    - @event.each do |e|
+      %li
+        = link_to e.title, event_path(e)
+        | 
+        = link_to '[e]', edit_event_path(e) 
+        |
+        = link_to '[x]', event_path(e), :method => :delete, :confirm => "Ya sure?"
 
 %p= link_to "Add new Event", new_event_path

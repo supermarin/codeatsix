@@ -1,30 +1,45 @@
-#container
-  #banner= link_to image_tag('banner.png'), '/'
+#homepage
+  .banner= link_to image_tag('banner2.png'), '/'
 
-  #navigation
+  .navigation
     .buttons
       .submissions.link{:url => '#submissions'} Prijave
       .about.link{:url => '#about'} Tko smo
       .location.link{:url => '#location'} Gdje se nalazimo
-    #next-meetup= "Sljedeći meetup: #{ "25.3.2012" } u #{ "18h" } "
+    #next-meetup.link{:url => @event.slug}
+      - if @event.present?
+        :erb
+          Sljedeći meetup: <span class="yellow"><%= @event.date %></span> u <span class="yellow"><%= @event.time %>h</span>
+      - else
+        :plain
+          Trenutno nema događaja u sustavu.
 
-  .clearboth
-
-  #content
+  .content
     %hr
-    #submissions
-      -if @event
-        = form_tag apply_path do |f|
-          = hidden_field_tag :event_id, @event.id
-          #first_name.text_field
-            = text_field :person, :first_name, :value => "Ime"
-          #last_name.text_field
-            = text_field :person, :last_name, :value => "Prezime"
-          #email.text_field
-            = text_field :person, :email, :value => "Email"
-          #apply.link Prijavi se!
-      -else
-        %p Trenutno nema dogadjaja na koje se mozete prijaviti.
+    .column-container
+      #messages.messages
+      #submissions
+        %h2 Prijave
+        -if @event
+          = form_tag apply_path, :id => 'apply-form' do |f|
+            = hidden_field_tag :event_id, @event.id
+            #first_name.text_field
+              = text_field :person, :first_name, :value => "Ime"
+            #last_name.text_field
+              = text_field :person, :last_name, :value => "Prezime"
+            #email.text_field
+              = text_field :person, :email, :value => "eMail"
+            #apply.button Prijavi se!
+        -else
+          %p Trenutno nema dogadjaja na koje se mozete prijaviti.
+
+      #talks
+        %h2
+          Predavanja
+        .container
+          %p
+            Trenutno nema prijavljenih predavanja. Ukoliko nam želite nešto ispričati o svojim web development iskustvima javite se na <span class="yellow">nikica@infinum.hr</span>
+
     %hr
 
     #about

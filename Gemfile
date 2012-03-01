@@ -10,6 +10,8 @@ gem 'thin'
 gem 'json'
 gem 'execjs'
 
+gem 'rails-boilerplate'
+
 gem 'jquery-rails'
 
 group :development do

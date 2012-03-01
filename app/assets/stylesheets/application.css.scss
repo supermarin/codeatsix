@@ -8,74 +8,109 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require html5-boilerplate
+ *= require reset
  *= require_self
+ *= require_tree .
 */
 
 $yellow-button: #cdc50c;
+$yellow-font: #fff200;
 $font-gray: #ebebeb;
 $form-font-gray: #848484;
 $background-gray: #eeeeee;
+$background-black: #1F1F1E;
 $inner-width: 840px;
+$error-pink: #9A2C73;
 
 @mixin yellow-button($height, $padding-top) {
   background-color: $yellow-button;
-  border-radius: 5px;
+  border-radius: 3px;
   font-weight: bold;
   text-align: center;
   height: $height;
   padding-top: $padding-top;
   color: #222120;
-  text-shadow: white 1px 1px;
+  text-shadow: white 0px 1px 0.5px;
+  -moz-box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 0px rgba(255,255,255,1);
+  -webkit-box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 0px rgba(255,255,255,1);
 }
 
-input,
+
+.clearboth {
+  clear: both;
+}
+
 body {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-  background: $background-gray;
-  color: $font-gray;
+  background-color: #1F1F1E;
 
-  strong, em, b, i {
-    font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+  input,b,i,strong {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
   }
 
-
-  p {
-    font-size: 85%;
-    line-height: 175%;
-    text-align: left;
-  }
-
-  h2 {
-    color: #ffff00;
-  }
-
-  hr {
-    background-color: #4a4a49;
-  }
-
-  .clearboth {
-    clear: both;
-  }
-  
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+ 
+  .button,
   .link {
     cursor: pointer;
   }
+  
+  color: $font-gray;
 
-  #container {
+  a {
+    color: $font-gray;
+  }
+
+  #admin {
+  }
+
+  #homepage {
+
+    .banner {
+      margin-left: 101px;
+    }
+
+    .yellow {
+      color: $yellow-font;
+    }
+
     width: 1000px;
     margin: auto;
     padding-bottom: 50px;
-    background: url(background.png) repeat;
-    background-color: #1F1F1E;
+  
+    hr {
+      background-color: #4a4a49;
+    }
 
-    #navigation {
+    h2 {
+      font-size: 1.8em;
+      color: #ffff00;
+      font-style: bold;
+      text-shadow: black 2px 1px 3px;
+    }
+
+    .error {
+      color: $error-pink;
+    }
+
+    label.error {
+      float: none;
+      color: $error-pink;
+      padding-left: .5em;
+      vertical-align: top;
+      display: block;
+      margin-top: 5px;
+    }
+    
+
+    .navigation {
       width: $inner-width;
       height: 35px;
       margin: auto;
 
       .buttons {
-
         .small-button {
           @include yellow-button(25px, 0px);
           float: left;
@@ -99,46 +134,66 @@ body {
       }
 
       #next-meetup {
+        font-size: 0.9em;
         float: left;
-        width: 420px;
+        width: 470px;
         height: 25px;
         background-color: #30302f;
         border-radius: 5px;
-        font-style: bold;
         text-align:center;
+        padding-top: 1px;
+
       }
     }
 
     #follow-button {
-      @include yellow-button(40px, 10px);
+      @include yellow-button(40px, 18px);
       font-size: 20px;
       width: 850px;
       border-radius: 5px;
     }
 
-
-    #content  {
+    .content {
       width: 840px;
       height: auto;
       margin: auto;
 
-      #submissions {
-        .text_field {
-          margin: 10px 0;
-          input {
-            font-size: 80%;
-            color: $form-font-gray;
-            border: 0px;
-            background-color: #1a1a19;
-            height: 30px;
-            padding: 2px 10px;
+      .column-container {
+        width: 100%;
+        overflow: auto;
+        position: relative;
+        padding-bottom: 5px;
+
+        #submissions {
+          float: left;
+          width: 50%;
+
+          .text_field {
+            padding-left: 5px;
+            margin: 10px 0;
+            input {
+              color: $form-font-gray;
+              border: 0px;
+              background-color: #1a1a19;
+              height: 30px;
+              padding: 2px 10px;
+            }
+          }
+
+          #apply {
+            @include yellow-button(25px, 0px);
+            width: 100px;
+            margin-top: 25px;
           }
         }
 
-        #apply {
-          @include yellow-button(20px, 0px);
-          font-size: 80%;
-          width: 100px;
+        #talks {
+          float: left;
+          width: 420 - 60px - 1px;
+          height: 230px;
+          padding: 0 30px 0 30px;
+          border-left: 1px dotted $yellow-font;
+          
         }
       }
 

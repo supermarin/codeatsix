@@ -1,8 +1,8 @@
 Codeatsix::Application.routes.draw do
+  post '/apply' => "home#apply", :as => 'apply'
+  get '/:slug' => "events#show"
+  
   resources :events
-
-  post '/apply' => "home#apply"
-  match '/events/:slug' => "events#show"
   
   root :to => "home#index"
 end
