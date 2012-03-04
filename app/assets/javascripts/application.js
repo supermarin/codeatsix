@@ -40,7 +40,18 @@ $(document).ready(function() {
   $('.link').click(function() {
     window.location = $(this).attr("url");
   });
+
+  // show/hide event info
+  $('.buttons').click(function() {
+    $('.column-container').children().addClass('hidden');
+    $('#submissions,#announcement').removeClass('hidden');
+  });
   
+  $('#next-meetup.button').click(function() { 
+    $('.column-container').children().addClass('hidden');
+    $('#participants,#talks').removeClass('hidden');
+  });
+
   // write defaults in data elem.
   $('#submissions input:text').each(function() {
     var el = $(this);

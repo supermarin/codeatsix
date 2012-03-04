@@ -160,11 +160,12 @@ body {
 
       .column-container {
         width: 100%;
-        overflow: auto;
+        overflow: hidden;
         position: relative;
         padding-bottom: 5px;
 
-        #submissions {
+        #submissions,
+        #participants {
           float: left;
           width: 50%;
 
@@ -185,8 +186,14 @@ body {
             width: 100px;
             margin-top: 25px;
           }
+          
+          .container {
+            height: 175px;
+            overflow: auto;
+          }
         }
 
+        #announcement,
         #talks {
           float: left;
           width: 420 - 60px - 1px;

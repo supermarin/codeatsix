@@ -1,0 +1,12 @@
+.navigation
+  .buttons
+    .submissions.link{:url => '/#submissions'} Prijave
+    .about.link{:url => '/#about'} Tko smo
+    .location.link{:url => '/#location'} Gdje se nalazimo
+  #next-meetup.button{:url => @event.slug}
+    - if @event.present?
+      :erb
+        Sljedeći meetup: <span class="yellow"><%= @event.date %></span> u <span class="yellow"><%= @event.time %>h</span>
+    - else
+      :plain
+        Trenutno nema događaja u sustavu.

@@ -1,61 +1,42 @@
-#homepage
-  .banner= link_to image_tag('banner2.png'), '/'
+%hr
+.column-container
+  #submissions
+    #messages
+    %h2 Prijave
+    -if @event
+      = form_tag apply_path, :id => 'apply-form' do |f|
+        = hidden_field_tag :event_id, @event.id
+        #first_name.text_field
+          = text_field :person, :first_name, :value => "Ime"
+        #last_name.text_field
+          = text_field :person, :last_name, :value => "Prezime"
+        #email.text_field
+          = text_field :person, :email, :value => "eMail"
+        #apply.button Prijavi se!
+    -else
+      %p Trenutno nema dogadjaja na koje se mozete prijaviti.
 
-  .navigation
-    .buttons
-      .submissions.link{:url => '#submissions'} Prijave
-      .about.link{:url => '#about'} Tko smo
-      .location.link{:url => '#location'} Gdje se nalazimo
-    #next-meetup.link{:url => @event.slug}
-      - if @event.present?
-        :erb
-          Sljedeći meetup: <span class="yellow"><%= @event.date %></span> u <span class="yellow"><%= @event.time %>h</span>
-      - else
-        :plain
-          Trenutno nema događaja u sustavu.
+  #announcement
+    = @event.announcement
 
-  .content
-    %hr
-    .column-container
-      #messages.messages
-      #submissions
-        %h2 Prijave
-        -if @event
-          = form_tag apply_path, :id => 'apply-form' do |f|
-            = hidden_field_tag :event_id, @event.id
-            #first_name.text_field
-              = text_field :person, :first_name, :value => "Ime"
-            #last_name.text_field
-              = text_field :person, :last_name, :value => "Prezime"
-            #email.text_field
-              = text_field :person, :email, :value => "eMail"
-            #apply.button Prijavi se!
-        -else
-          %p Trenutno nema dogadjaja na koje se mozete prijaviti.
+  #participants.hidden
+    %h2 Dolaze ...
+    .container
+      - if !@event.persons.present?
+        %p Zasada nema prijavljenih. Budi hipster i prijavi se dok još nitko nije!
+      - else 
+        - @event.persons.each do |p|
+          %li
+            :erb
+              <%= p.first_name %> <%= p.last_name %>
 
-      #talks
-        %h2
-          Predavanja
-        .container
-          %p
-            Trenutno nema prijavljenih predavanja. Ukoliko nam želite nešto ispričati o svojim web development iskustvima javite se na <span class="yellow">nikica@infinum.hr</span>
+  #talks.hidden
+    %h2
+      Predavanja
+    .container
+      %p
+        Trenutno nema prijavljenih predavanja. Ukoliko nam želite nešto ispričati o svojim web development iskustvima, javite se na <span class="yellow">nikica@infinum.hr</span>
 
-    %hr
-
-    #about
-      %h2 Tko smo
-      %p Performing with Meat Loaf on Hell In A Handbasket is The Neverland Express, his long-time backing ensemble, featuring John Miceli (drums, percussion), Patti Russo (lead and backing vocals), Paul Crook (electric and acoustic guitars), Randy Flowers (electric and acoustic guitars, vocals), David Luther (saxophone, vocals), Justin Avery (piano, organ, keyboard, vocals), and Danny Miranda (electric and upright bass). The new Meat Loaf tracks on Hell In A Handbasket include "All of Me," "The Giving Tree," "Live or Die," "Blue Sky/Mad Mad World/The Good God is a Woman and She Don't Like Ugly" (special appearance by Chuck D), "California Dreamin'" (duet with Patti Russo), "Party of One," "Another Day," "40 Days," "Our Love and Our Souls" (duet with Patti Russo), "Stand in the Storm" (special guest appearances from Trace Adkins, Lil Jon and Mark McGrath), "Blue Sky," and "Fall From Grace."
-    %hr
-
-    #location
-      .text
-        %h2 Gdje se nalazimo
-        %p Performing with Meat Loaf on Hell In A Handbasket is The Neverland Express. Performing with Meat Loaf on Hell In A Handbasket is The Neverland Express.
-      .pic
-        =link_to image_tag('gmaps.png'), 'map.google.com/dskfjsdk'
-    %hr
-
-    #follow-button.link{:url => 'https://twitter.com/#!/codeatsix'}
-      :plain 
-        Prati <strong>@codeatsix</strong> na Twitteru
-
+= render :partial => 'about'
+= render :partial => 'location'
+= render :partial => 'twitter'

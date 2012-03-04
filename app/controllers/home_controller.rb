@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @event = Event.active
+    render 'index'
   end
 
   def apply
@@ -9,10 +10,6 @@ class HomeController < ApplicationController
     person = Person.find_by_email(params[:person][:email])
     person = Person.new(params[:person]) unless person.present?
     
-    # if person.new_record?
-    #   raise person.inspect
-    # end
-
     begin
       event.persons << person
       render :json => { :message => "Prijava zaprimljena, woohoo!" }

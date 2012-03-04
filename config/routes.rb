@@ -1,6 +1,6 @@
 Codeatsix::Application.routes.draw do
   post '/apply' => "home#apply", :as => 'apply'
-  get '/:slug' => "events#show"
+  get '/current' => "home#current"
   
   resources :events
   

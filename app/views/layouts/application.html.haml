@@ -6,4 +6,10 @@
     = javascript_include_tag 'modernizr'
     = csrf_meta_tags
   %body
-    =yield
+    #homepage
+      .banner
+        = link_to image_tag('banner2.png'), '/'
+      .navigation
+        = render :partial => 'layouts/navigation'
+      .content
+        = yield
