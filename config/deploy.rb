@@ -1,4 +1,3 @@
-load 'bundler/capistrano'
 load 'deploy/assets'
 
 host = "codeatsix.infinum.hr"
