@@ -1,3 +1,6 @@
+load 'bundler/capistrano'
+load 'deploy/assets'
+
 host = "codeatsix.infinum.hr"
 
 set :application, "codeatsix.infinum.hr"
