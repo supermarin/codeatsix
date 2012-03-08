@@ -5,14 +5,10 @@ class Person < ActiveRecord::Base
 
   #validates :person_id,  :presence => true
   validates :first_name,
-            :presence => true,
-            :format => { :with => /\A[a-zA-Z]+\z/, :message => "must be letters only" },
-            :length => { :in => 2..15 }
+            :presence => true
 
   validates :last_name,
-            :presence => true,
-            :format => { :with => /\A[a-zA-Z]+\z/, :message => "must be letters only" },
-            :length => { :in => 2..15 }
+            :presence => true
 
   validates :email,
             :presence => true,

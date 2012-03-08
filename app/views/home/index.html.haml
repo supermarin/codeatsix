@@ -7,13 +7,13 @@
       = form_tag apply_path, :id => 'apply-form' do |f|
         = hidden_field_tag :event_id, @event.id
         #first_name.text_field
-          = text_field :person, :first_name, :value => "Ime"
+          = text_field_tag :person, :first_name, :value => "Ime"
         #last_name.text_field
-          = text_field :person, :last_name, :value => "Prezime"
+          = text_field_tag :person, :last_name, :value => "Prezime"
         #email.text_field
-          = text_field :person, :email, :value => "eMail"
+          = text_field_tag :person, :email, :value => "eMail"
+        =# submit_tag 'Prijavi se', :class => 'button', :id => 'apply'
         #apply.button Prijavi se!
-    -else
       %p Trenutno nema dogadjaja na koje se mozete prijaviti.
 
   #announcement

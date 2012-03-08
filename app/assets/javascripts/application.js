@@ -72,7 +72,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#apply.button').click(function() {
+  $('#apply-form').submit(function() {
     // clear from default values
     $('#submissions input:text').each(function(i,el) {
       if ($(el).data('originalValue') == $(el).val()) {
