@@ -12,9 +12,9 @@ class HomeController < ApplicationController
     
     begin
       event.persons << person
-      render :json => { :message => "Prijava zaprimljena, woohoo!" }
+      render :json => { :message => "Thanks for applying." }
     rescue Exception => e
-      render :json => e.message 
+      render :json => e.message, :status => 500
     end
   end
 end

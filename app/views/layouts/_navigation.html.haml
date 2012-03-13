@@ -1,9 +1,9 @@
 .navigation
   .buttons
     .submissions.link{:url => '/#submissions'} Prijave
-    .about.link{:url => '/#about'} Tko smo
+    .about.link{:url => '/#about'} O nama
     .location.link{:url => '/#location'} Gdje se nalazimo
-  #next-meetup.button{:url => @event.slug}
+  #next-meetup.link{:url => '/#announcement'}
     - if @event.present?
       :erb
         Sljedeći meetup: <span class="yellow"><%= @event.date %></span> u <span class="yellow"><%= @event.time %>h</span>

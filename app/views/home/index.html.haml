@@ -7,20 +7,17 @@
       = form_tag apply_path, :id => 'apply-form' do |f|
         = hidden_field_tag :event_id, @event.id
         #first_name.text_field
-          = text_field_tag :person, :first_name, :value => "Ime"
+          = text_field_tag :first_name, "ime"
         #last_name.text_field
-          = text_field_tag :person, :last_name, :value => "Prezime"
+          = text_field_tag :last_name, "prezime"
         #email.text_field
-          = text_field_tag :person, :email, :value => "eMail"
-        =# submit_tag 'Prijavi se', :class => 'button', :id => 'apply'
-        #apply.button Prijavi se!
+          = text_field_tag :email, "email"
+        =submit_tag 'Prijavi se', :class => 'button', :id => 'apply'
     - else
       %p Trenutno nema dogadjaja na koje se mozete prijaviti.
 
-  #announcement
-    = @event.announcement
 
-  #participants.hidden
+  #participants
     %h2 Dolaze ...
     .container
       - if !@event.persons.present?
@@ -31,13 +28,20 @@
             :erb
               <%= p.first_name %> <%= p.last_name %>
 
-  #talks.hidden
+= render :partial => 'about'
+
+
+%hr
+.column-container
+  #announcement
+    = @event.announcement
+
+  #talks
     %h2
       Predavanja
     .container
       %p
-        Trenutno nema prijavljenih predavanja. Ukoliko nam želite nešto ispričati o svojim web development iskustvima, javite se na <span class="yellow">nikica@infinum.hr</span>
+        Trenutno nema prijavljenih predavanja. Ukoliko nam želite nešto ispričati o svojim web development iskustvima, javite se na <span class="yellow">codeatsix@infinum.hr</span>
 
-= render :partial => 'about'
 = render :partial => 'location'
 = render :partial => 'twitter'

@@ -41,17 +41,6 @@ $(document).ready(function() {
     window.location = $(this).attr("url");
   });
 
-  // show/hide event info
-  $('.buttons').click(function() {
-    $('.column-container').children().addClass('hidden');
-    $('#submissions,#announcement').removeClass('hidden');
-  });
-  
-  $('#next-meetup.button').click(function() { 
-    $('.column-container').children().addClass('hidden');
-    $('#participants,#talks').removeClass('hidden');
-  });
-
   // write defaults in data elem.
   $('#submissions input:text').each(function() {
     var el = $(this);
@@ -72,7 +61,9 @@ $(document).ready(function() {
     }
   });
 
-  $('#apply-form').submit(function() {
+  $('#apply-form').submit(function(event) {
+    event.preventDefault();
+
     // clear from default values
     $('#submissions input:text').each(function(i,el) {
       if ($(el).data('originalValue') == $(el).val()) {
@@ -81,7 +72,7 @@ $(document).ready(function() {
     });
 
     // submit if valid
-    if ($('#apply-form').valid()) {
+    if ($(this).valid()) {
       var params = {
         event_id: $('#submissions #event_id:hidden').val(),
         person: {
@@ -97,12 +88,9 @@ $(document).ready(function() {
         data: params,
         dataType: "json",
         success: function(response) {
-          console.log(response)
-          //$('#submissions').html(response.message);
-          $('#messages').removeClass('error').html(response.message)
+          $('#messages').removeClass('error').addClass('success').html(response.message)
         },
         error: function(response) {
-          console.log(response)
           $('#messages').addClass('error').html(response.responseText);
         }
       });
