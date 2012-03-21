@@ -35,7 +35,7 @@
 .column-container
   #announcement
     %h2 O ovoj instanci
-    = @event.announcement
+    = @event.announcement.html_safe
 
   #talks
     %h2
