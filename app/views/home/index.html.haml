@@ -18,6 +18,7 @@
 
 
   #participants
+  - if @event
     %h2 Dolaze ...
     .container
       - if !@event.persons.present?
@@ -34,8 +35,9 @@
 %hr
 .column-container
   #announcement
-    %h2 O ovoj instanci
-    = @event.announcement.html_safe
+    - if @event
+      %h2 O ovoj instanci
+      = @event.announcement.html_safe
 
   #talks
     %h2
