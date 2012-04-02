@@ -16,18 +16,17 @@
     - else
       %p Trenutno nema dogadjaja na koje se mozete prijaviti.
 
-
   #participants
-  - if @event
-    %h2 Dolaze ...
-    .container
-      - if !@event.persons.present?
-        %p Zasada nema prijavljenih. Budi hipster i prijavi se dok još nitko nije!
-      - else 
-        - @event.persons.each do |p|
-          %li
-            :erb
-              <%= p.first_name %> <%= p.last_name %>
+    - if @event
+      %h2 Dolaze ...
+      .container
+        - if !@event.persons.present?
+          %p Zasada nema prijavljenih. Budi hipster i prijavi se dok još nitko nije!
+        - else 
+          - @event.persons.each do |p|
+            %li
+              :erb
+                <%= p.first_name %> <%= p.last_name %>
 
 = render :partial => 'about'
 
