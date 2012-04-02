@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
     respond_to do |wants|
       wants.html { render 'index' }
-      wants.json { render json: { 'events' => @events }}
+      wants.json { render json: { 'events' => Event.where(:is_active => true) }}
     end
   end
 
