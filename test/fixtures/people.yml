@@ -1,21 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  person_id: MyString
-  : 1
+  id: 1
   first_name: MyString
-  : MyString
   last_name: MyString
-  : MyString
-  e_mail: MyString
-  : MyString
+  email: MyString
 
 two:
-  person_id: MyString
-  : 1
+  id: 2
   first_name: MyString
-  : MyString
   last_name: MyString
-  : MyString
-  e_mail: MyString
-  : MyString
+  email: MyString

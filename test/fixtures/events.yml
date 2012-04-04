@@ -1,25 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  event_id: MyString
-  : 1
+  id: 1
   title: MyString
-  : MyString
-  body: MyString
-  : MyText
-  created_at: MyString
-  : 2012-02-07 18:37:44
-  scheduled_at: MyString
-  : 2012-02-07 18:37:44
+  body: MyText
+  created_at: 2012-02-07 18:37:44
+  scheduled_at: 2012-02-07 18:37:44
 
 two:
-  event_id: MyString
-  : 1
+  id: 2
   title: MyString
-  : MyString
-  body: MyString
-  : MyText
-  created_at: MyString
-  : 2012-02-07 18:37:44
-  scheduled_at: MyString
-  : 2012-02-07 18:37:44
+  body: MyText
+  created_at: 2012-02-07 18:37:44
+  scheduled_at: 2012-02-07 18:37:44

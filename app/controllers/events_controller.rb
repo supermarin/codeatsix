@@ -2,7 +2,12 @@ class EventsController < ApplicationController
   layout 'admin'
 
   def index
-    @event = Event.find(:all)
+    @events = Event.all
+
+    respond_to do |wants|
+      wants.html { render 'index' }
+      wants.json { render json: { 'events' => Event.where(:is_active => true) }}
+    end
   end
 
   def show
@@ -11,7 +16,11 @@ class EventsController < ApplicationController
     else 
       @event = Event.find(params[:id])
     end
-    render 'show', :layout => 'application'
+
+    respond_to do |wants|
+      wants.html { render 'show', :layout => 'application' }
+      wants.json { render :json => @event }
+    end
   end
 
   def new

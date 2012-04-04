@@ -1,9 +1,9 @@
-- if @event.blank?
+- if @events.blank?
   %p No events in the system.
 - else
   %p Events in the system:
   %ul
-    - @event.each do |e|
+    - @events.each do |e|
       %li
         = link_to e.title, event_path(e)
         | 
