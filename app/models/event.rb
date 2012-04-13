@@ -15,9 +15,13 @@ class Event < ActiveRecord::Base
     scheduled_at.strftime("%H")
   end
 
-  def self.active
+  def self.upcomings
     where("scheduled_at >= ? AND is_active = ?", Date.today, true)
-        .order('scheduled_at ASC').first
+        .order('scheduled_at ASC')
+  end
+
+  def self.active
+    upcomings.first
   end
 
   def as_json(options = {})
