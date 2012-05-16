@@ -3,15 +3,13 @@
   .hackathon.link{:url => '/hackathon'} Hackathon
   .location.link{:url => '/location'} Gdje smo? 
 
-- if @meetup.present? || @hackathon.present?
-  #next-event.link{:url => "/#{@event.whatisit}/#announcement"}
+#next-event
+  - if @meetup.present? || @hackathon.present?
     :erb
       Meetup: <span class="yellow"><%= @meetup.date %></span> u <span class="yellow"><%= @meetup.time %>h</span> |
       Hackathon: <span class="yellow"><%= @hackathon.date %></span> u <span class="yellow"><%= @hackathon.time %>h</span>
-      
-- else
-  #next-event.link{:url => ""}
+  - else
     :plain
-      Trenutno nema događaja u sustavu.
+      Tu više ničeg za nas nema, nema ničega.
 .clearboth
 %hr
