@@ -1,7 +1,24 @@
-class HomeController < ApplicationController
-  def index
+class PagesController < ApplicationController
+
+  def home
+    redirect_to '/meetup'
+  end
+
+  def meetup
     @event = Event.active
-    render 'index'
+    @meetup = Event.meetups.active
+    render 'meetup'
+  end
+
+  def hackathon
+    @event = Event.active
+    @hackathon = Event.hackathons.active
+    render 'hackathon'
+  end
+
+  def location
+    @event = Event.active
+    render 'location'
   end
 
   def apply

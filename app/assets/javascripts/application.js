@@ -22,13 +22,11 @@ $(document).ready(function() {
   // set up client side form validtion
   $("#apply-form").validate({
     rules: {
-      "person[first_name]": { required: true },
-      "person[last_name]": { required: true },
+      "person[name]": { required: true },
       "person[email]": { required: true, email: true }
     },
     messages: {
-      "person[first_name]": 'Treba nam tvoje ime',
-      "person[last_name]": 'Treba nam i prezime',
+      "person[name]": 'Treba nam tvoje ime',
       "person[email]": {
         email: 'Kakav je to email?',
         required: 'Ovo polje nam je najvažnije!'
@@ -41,43 +39,15 @@ $(document).ready(function() {
     window.location = $(this).attr("url");
   });
 
-  // write defaults in data elem.
-  $('#submissions input:text').each(function() {
-    var el = $(this);
-    el.data('originalValue', el.val())
-  });
-
-  // clear input elements and repopulate if empty
-  $('#submissions input:text').focus(function() {
-    if (!$(this).data('originalValue')) {
-      $(this).data('originalValue', $(this).val());
-    }
-    if ($(this).val() == $(this).data('originalValue')) {
-      $(this).val('');
-    }
-  }).blur(function(){
-    if ($(this).val() == '') {
-      $(this).val($(this).data('originalValue'));
-    }
-  });
-
   $('#apply-form').submit(function(event) {
     event.preventDefault();
-
-    // clear from default values
-    $('#submissions input:text').each(function(i,el) {
-      if ($(el).data('originalValue') == $(el).val()) {
-        $(el).val('');
-      }
-    });
 
     // submit if valid
     if ($(this).valid()) {
       var params = {
         event_id: $('#submissions #event_id:hidden').val(),
         person: {
-          first_name: $('#first_name input').val(),
-          last_name: $('#last_name input').val(),
+          name: $('#name input').val(),
           email: $('#email input').val()
         }
       }
@@ -91,13 +61,7 @@ $(document).ready(function() {
           $('#messages').removeClass('error').addClass('success').html(response.message)
         },
         error: function(response) {
-          $('#messages').addClass('error').html(response.responseText);
-        }
-      });
-    } else {
-      $('#submissions input:text').each(function(i,el) {
-        if ($(el).val() == $(el).data('originalValue')) {
-          $(el).val($(el).data('originalValue'));
+          $('#messages').removeClass('success').addClass('error').html(response.responseText);
         }
       });
     }

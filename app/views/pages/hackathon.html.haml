@@ -1,0 +1,40 @@
+#hackathon
+  %h2 Što je hackathon?
+  :markdown
+    Hackathon je ...
+
+    **General guidelines:**
+
+    * kodiramo u timovima (idealno troje ljudi, moguće 2-5)
+    * svaki tim ima voditelja / voditelj je osoba čija je originalna ideja projekta
+    * ako nemate svoju ideju, priključujete se timu i slušate voditelja :)
+    * sve sto nahekamo mora biti pod open-source licencom (MIT/BSD/GPL)
+    * prije kodiranja, svaku ideju treba razraditi (bez brige, minimalno :)
+
+    **Prije nego se prijavite razmislite o tome sto želite raditi.**
+
+    Kada ste razmislili, bilo bi idealno kada bi ste poslali opis toga što želite raditi na <span class="yellow">codeatsix@infinum.hr</span> kako bi smo znali najaviti teme hackathona.
+    
+    Popis bi se trebao sastojati od sljedećeg:
+
+    * opisa projekta (feature set)
+    * tehnologija koje će se koristiti
+    * projecirane veličine tima i zaduženja
+    * članova tima, ako ih znate
+
+#submissions
+  %hr
+  =render :partial => 'pages/submission', :locals => { :event => @hackathon }
+  .clearboth
+
+-if @hackathon
+  #projects
+    %hr
+    %h2
+      Što ćemo hekati?
+    = markdown @hackathon.announcement
+
+- if @hackathon
+  #participants
+    %hr
+    =render :partial => 'pages/participants', :locals => { :event => @hackathon }

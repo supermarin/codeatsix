@@ -1,0 +1,14 @@
+%h2 Prijave
+-if event
+  = form_tag apply_path, :id => 'apply-form' do |f|
+    = hidden_field_tag :event_id, event.id
+    #name.text_field
+      = text_field_tag :name, "", :placeholder => "ime/prezime"
+    #email.text_field
+      = text_field_tag :email, "", :placeholder => "email"
+    =submit_tag 'Prijavi se', :class => 'button', :id => 'apply'
+  .clearboth
+  #messages
+- else
+  :erb
+    <p>Trenutno nema eventa na koji se mozete prijaviti.</p>

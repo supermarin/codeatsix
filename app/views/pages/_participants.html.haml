@@ -1,0 +1,8 @@
+%h2 Dolaze ...
+- if !event.persons.present?
+  %p Zasada nema prijavljenih. Budi hipster i prijavi se dok još nitko nije!
+- else 
+  - event.persons.each do |p|
+    %li
+      :erb
+        <%= p.name %>

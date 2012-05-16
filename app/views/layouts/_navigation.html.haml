@@ -1,12 +1,15 @@
-.navigation
-  .buttons
-    .submissions.link{:url => '/#submissions'} Prijave
-    .about.link{:url => '/#about'} O nama
-    .location.link{:url => '/#location'} Gdje se nalazimo
-  #next-meetup.link{:url => '/#announcement'}
-    - if @event.present?
-      :erb
-        Sljedeći meetup: <span class="yellow"><%= @event.date %></span> u <span class="yellow"><%= @event.time %>h</span>
-    - else
-      :plain
-        Trenutno nema događaja u sustavu.
+.buttons
+  .meetup.link{:url => '/meetup'} Meetup
+  .hackathon.link{:url => '/hackathon'} Hackathon
+  .location.link{:url => '/location'} Gdje smo? 
+
+- if @event.present?
+  #next-event.link{:url => "/#{@event.whatisit}/#announcement"}
+    :erb
+      Sljedeći event (<%= @event.whatisit %>) / <span class="yellow"><%= @event.date %></span> u <span class="yellow"><%= @event.time %>h</span>
+- else
+  #next-event.link{:url => ""}
+    :plain
+      Trenutno nema događaja u sustavu.
+.clearboth
+%hr

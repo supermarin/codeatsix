@@ -1,18 +1,28 @@
 .title
-  = f.label :title
+  :erb
+    Title<br/>
   = f.text_field :title
 
 .slug
-  = f.label :slug
+  :erb
+    Slug<br/>
   = f.text_field :slug
 
 .announcement
-  = f.label :announcement
+  :erb
+    Announcement<br/>
   = f.text_area :announcement
 
 .report
-  = f.label :report
+  :erb
+    Report<br/>
   = f.text_area :report
+
+.type
+  :erb
+    Type of event:<br/>
+    Meetup <%= f.radio_button :whatisit, 'meetup' %><br/>
+    Hackathon <%= f.radio_button :whatisit, 'hackathon'%>
 
 .scheduled_at
   = datetime_select :event, :scheduled_at

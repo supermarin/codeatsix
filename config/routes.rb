@@ -1,8 +1,11 @@
 Codeatsix::Application.routes.draw do
-  post '/apply' => "home#apply", :as => 'apply'
-  get '/current' => "home#current"
+  match '/meetup' => "pages#meetup"
+  match '/hackathon' => "pages#hackathon"
+  match '/location' => "pages#location"
+  
+  post '/apply' => "pages#apply", :as => 'apply'
   
   resources :events
   
-  root :to => "home#index"
+  root :to => 'pages#home' 
 end

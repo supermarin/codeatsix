@@ -15,6 +15,14 @@ class Event < ActiveRecord::Base
     scheduled_at.strftime("%H")
   end
 
+  def self.hackathons
+    where("whatisit = 'hackathon'")
+  end
+
+  def self.meetups
+    where("whatisit = 'meetup'")
+  end
+
   def self.upcomings
     where("scheduled_at >= ? AND is_active = ?", Date.today, true)
         .order('scheduled_at ASC')

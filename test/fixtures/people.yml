@@ -2,12 +2,5 @@
 
 one:
   id: 1
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-
-two:
-  id: 2
-  first_name: MyString
-  last_name: MyString
+  name: MyString
   email: MyString

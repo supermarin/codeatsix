@@ -4,10 +4,7 @@ class Person < ActiveRecord::Base
   
 
   #validates :person_id,  :presence => true
-  validates :first_name,
-            :presence => true
-
-  validates :last_name,
+  validates :name,
             :presence => true
 
   validates :email,
