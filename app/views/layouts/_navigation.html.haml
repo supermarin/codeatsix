@@ -3,10 +3,12 @@
   .hackathon.link{:url => '/hackathon'} Hackathon
   .location.link{:url => '/location'} Gdje smo? 
 
-- if @event.present?
+- if @meetup.present? || @hackathon.present?
   #next-event.link{:url => "/#{@event.whatisit}/#announcement"}
     :erb
-      Sljedeći event (<%= @event.whatisit %>) / <span class="yellow"><%= @event.date %></span> u <span class="yellow"><%= @event.time %>h</span>
+      Meetup: <span class="yellow"><%= @meetup.date %></span> u <span class="yellow"><%= @meetup.time %>h</span> |
+      Hackathon: <span class="yellow"><%= @hackathon.date %></span> u <span class="yellow"><%= @hackathon.time %>h</span>
+      
 - else
   #next-event.link{:url => ""}
     :plain

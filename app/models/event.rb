@@ -8,11 +8,19 @@ class Event < ActiveRecord::Base
   validates_uniqueness_of :slug
   
   def date
-    scheduled_at.strftime("%d.%m.%Y.")
+    if scheduled_at
+      return scheduled_at.strftime("%d.%m.%Y.")
+    else
+      return "n/a"
+    end
   end
 
   def time
-    scheduled_at.strftime("%H")
+    if scheduled_at
+      scheduled_at.strftime("%H")
+    else
+      return "? "
+    end
   end
 
   def self.hackathons

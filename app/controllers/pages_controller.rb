@@ -5,19 +5,17 @@ class PagesController < ApplicationController
   end
 
   def meetup
-    @event = Event.active
-    @meetup = Event.meetups.active
+    get_events_data
     render 'meetup'
   end
 
   def hackathon
-    @event = Event.active
-    @hackathon = Event.hackathons.active
+    get_events_data
     render 'hackathon'
   end
 
   def location
-    @event = Event.active
+    get_events_data
     render 'location'
   end
 
@@ -33,5 +31,22 @@ class PagesController < ApplicationController
     rescue Exception => e
       render :json => e.message, :status => 500
     end
+  end
+
+
+  private
+
+  def get_events_data
+    @meetup = Event.meetups.active
+    @hackathon = Event.hackathons.active
+
+    if not @meetup.present?
+      @meetup = Event.new
+    end
+    
+    if not @hackathon.present?
+      @hackathon = Event.new
+    end
+    
   end
 end
